@@ -77,6 +77,9 @@ div.content {
     <a class="navbar-brand" href="#">
       <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
     </a>
+    <h3>
+        Openlibrary Admin Dashboard
+    </h3>
   </div>
 </nav>
 
@@ -85,8 +88,10 @@ div.content {
     <div class="col-md-3">
     <div class="sidebar">
     <a class="active" href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
+    <a href="#news">Students</a>
+    <a href="#contact">Courses</a>
+    <a href="#contact">Documents</a>
+    <a href="#contact">Passed papers</a>
     <a href="#about">About</a>
     </div>
     </div>
@@ -95,7 +100,7 @@ div.content {
 
 <!-- Page content -->
 <div class="content">
-  ..
+  @yield('content')
 </div>
 </div>
     </div>
