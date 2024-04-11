@@ -3,11 +3,11 @@
 @section('content')
 <div class="card">
     <div class="card-header">
-        <h4>Student Details</h4>
+        <h4>Course Details</h4>
     </div>
     <div class="card-body">
         <div class="text">
-            <a href="{{ url('/student') }}" class="btn btn-success btn-sm" title="Back">
+            <a href="{{ url('/course') }}" class="btn btn-success btn-sm" title="Back">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
             </a>
         </div>
@@ -15,35 +15,24 @@
         <div class="table">
             <table class="table">
                 <tbody>
-                    @if ($student)
+                    @if ($course)
                         <tr>
                             <td>ID</td>
-                            <td>{{ $student->id }}</td>
+                            <td>{{ $course->id }}</td>
                         </tr>
                         <tr>
                             <td>First Name</td>
-                            <td>{{ $student->firstname }}</td>
+                            <td>{{ $course->name }}</td>
                         </tr>
                         <tr>
                             <td>First Name</td>
-                            <td>{{ $student->lastname }}</td>
+                            <td>{{ $course->courseunit }}</td>
                         </tr>
                         <tr>
                             <td>Last Name</td>
-                            <td>{{ $student->reg_number}}</td>
+                            <td>{{ $course->duration}}</td>
                         </tr>
-                        <tr>
-                            <td>Password</td>
-                            <td>{{ $student->password }}</td>
-                        </tr>
-                        <tr>
-                            <td>Course</td>
-                            <td>{{ $student->course }}</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>{{ $student->email }}</td>
-                        </tr>
+                        
                         
                     @else
                         <tr>

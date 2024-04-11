@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Document extends Model
 {
+    protected $fillable = ['file_path'];
+    
     use HasFactory;
 }

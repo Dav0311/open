@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>UICT open library system</title>
     <style>
         /* The side navigation menu */
 .sidebar {
@@ -73,25 +73,24 @@ div.content {
     <div class="container">
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 
-  <div class="container">
     <a class="navbar-brand" href="#">
       <img src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="30" height="24">
     </a>
     <h3>
         Openlibrary Admin Dashboard
     </h3>
-  </div>
+ 
 </nav>
 
 
 <div class="row">
     <div class="col-md-3">
     <div class="sidebar">
-    <a class="active" href="#home">Home</a>
-    <a href="#news">Students</a>
-    <a href="#contact">Courses</a>
-    <a href="#contact">Documents</a>
-    <a href="#contact">Passed papers</a>
+    <a class="active" href="{{ url('/')}}">Home</a>
+    <a href="{{ url('/student')}}">Students</a>
+    <a href="{{ url('/course')}}">Courses</a>
+    <a href="{{ url('/document')}}">Documents</a>
+    <a href="{{ url('/papers')}}">Passed papers</a>
     <a href="#about">About</a>
     </div>
     </div>

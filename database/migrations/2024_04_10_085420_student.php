@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->string('reg_number');
             $table->string('course');
-           // $table->string('email');
+            $table->string('email');
             $table->string('password');
             $table->timestamps();
         });

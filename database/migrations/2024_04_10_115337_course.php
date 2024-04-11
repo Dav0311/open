@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('documents', function (Blueprint $table) {
+        //course model
+        Schema::create('courses',function(Blueprint $table)
+        {
             $table->id();
-            $table->string('file_name');
-            $table->string('file_path');
-            $table->string('course')->nullable();
+            $table->string('name');
+            $table->string('courseunit');
+           
+            $table->string('duration');
             $table->timestamps();
         });
     }
@@ -25,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('documents');
+        //
     }
 };
