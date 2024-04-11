@@ -25,6 +25,14 @@ class DatabaseSeeder extends Seeder
             'file_name' => 'Test Document',
             'file_path' => 'documents/test-document.pdf',
             'course' => 'Computer Science',
+            'course_unit' => 'Introduction to Programming',
+        ]);
+
+        Document::create([
+            'file_name' => 'Test Document 2',
+            'file_path' => 'documents/test-document-2.pdf',
+            'course' => 'Computer Science',
+            'course_unit' => 'Introduction to Programming',
         ]);
     }
 }

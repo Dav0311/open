@@ -12,8 +12,10 @@ class DocumentController extends Controller
      */
     public function index()
     {
-        //get all documents
-        $documents = Document::all();
+        //get all documents groupby course and under course group by course unit
+        $documents = Document::all()->groupBy('course')->map(function ($course) {
+            return $course->groupBy('course_unit');
+        });
         return response()->json(['success' => true, 'data' => $documents]);
     }
 
