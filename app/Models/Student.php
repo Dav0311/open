@@ -15,7 +15,7 @@ class Student extends Model
         'lastname',
         'reg_number',
         'course',
-        //'email',
+        'email',
         'password',
         
     ];

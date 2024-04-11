@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //student table 
-        schema::create ('students', function(Blueprint $table){
+        //course model
+        Schema::create('courses',function(Blueprint $table)
+        {
             $table->id();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('reg_number');
-            $table->string('course');
-            $table->string('email');
-            $table->string('password');
+            $table->string('name');
+            $table->string('courseunit');
+           
+            $table->string('duration');
             $table->timestamps();
         });
     }
