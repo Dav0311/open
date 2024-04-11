@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('file_name');
             $table->string('file_path');
             $table->string('course');
+            $table->string('course_unit');
             $table->timestamps();
         });
     }
