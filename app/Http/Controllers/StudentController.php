@@ -3,70 +3,69 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Http\RedirectResponse;
-use App\Models\Student;
+use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-
+use App\Http\Controllers\MailController;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeEmail;
 
 class StudentController extends Controller
 {
-    //get all student data
-    public function index():view 
+    
+
+    public function index(): View
     {
-        $students = Student :: all();
-        return view ('student.index')->with('students', $students);
+        $students = User::all();
+        return view('student.index')->with('students', $students);
     }
 
-    //create student 
-    public function create(): view 
+    public function create(): View
     {
-        return view ('student.create');
+        return view('student.create');
     }
 
-    //store the student information
-    public function store (Request $request): RedirectResponse
+    public function store(Request $request): RedirectResponse
     {
         $input = $request->all();
-        Student::create($input);
-        return redirect('student')->with('flash_message','student added successfully');
+        User::create($input);
+        return redirect('student')->with('flash_message', 'Student added successfully');
     }
 
-    //show student info by id
-   
-    public function show(string $id): view 
+    public function show($id)
     {
-        try {
-            $student = Student::findOrFail($id);
-            return view('student.show')->with('student', $student);
-        } catch (ModelNotFoundException $e) {
-           
-            return abort(404);
-        }
+        $student = User::find($id);
+        return view('student.show', compact('student'));
     }
 
-    // Edit student form
-    public function edit(string $id)
+    public function show_email($id)
     {
-        $student = Student::find($id);
+        $student = User::find($id);
+        return view('student.email', compact('student'));
+    }
+
+    
+
+    public function edit(string $id): View
+    {
+        $student = User::find($id);
         return view('student.edit')->with('student', $student);
     }
 
-    // Update student info
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): RedirectResponse
     {
-        $student = Student::find($id);
+        $student = User::find($id);
         $input = $request->all();
         $student->update($input);
         return redirect('student')->with('flash_message', 'Student information has been updated');
     }
 
-    //delete student 
-    public function destroy(string $id):RedirectResponse
+    public function destroy(string $id): RedirectResponse
     {
-        Student::destroy($id);
-        return redirect('student')->with('flash_message', 'student information has been deleted');
+        User::destroy($id);
+        return redirect('student')->with('flash_message', 'Student information has been deleted');
     }
 
+ 
 }

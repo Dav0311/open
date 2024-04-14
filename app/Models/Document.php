@@ -7,7 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Document extends Model
 {
-    protected $fillable = ['file_path'];
+    protected $fillable = [
+        'file_path',
+        'file_name',
+        'course',
+        'course_unit'
+    ];
     
     use HasFactory;
 }

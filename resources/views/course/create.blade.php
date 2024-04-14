@@ -26,21 +26,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>  
         <br>
-        <div class="card">
-            <div class="card-body">
-                <h4 class="card-title">Upload Documents</h4>
-                <br>
-                <form action="{{ route('documents.upload') }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <div class="mb-3">
-                        
-                        <input class="form-control" type="file" name="file" id="file">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Upload</button>
-                </form>
-            </div>
-        </div>
-
+       
     </div>
 </div>
 
